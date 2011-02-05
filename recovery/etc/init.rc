@@ -1,0 +1,41 @@
+on init
+
+    # setup enviroment
+    export PATH /sbin
+    export ANDROID_ROOT /system
+    export ANDROID_DATA /data
+    export EXTERNAL_STORAGE /sdcard
+
+    # setup recovery filesystems
+    mkdir /sdcard 0771 system system
+    mkdir /sd-ext 0771 system system
+    mkdir /system 0771 system system
+    mkdir /data 0771 system system
+    mkdir /cache 0770 system cache
+    mkdir /etc 0770 root root
+    mkdir /tmp 01777 root root
+
+    # mount inital filesystems
+    mount tmpfs tmpfs /tmp size=4mi
+    devwait /dev/block/mmcblk0p1
+    mount vfat /dev/block/mmcblk0p1 /sdcard rw
+
+
+on boot
+    ifup lo
+    hostname localhost
+    domainname localdomain
+    class_start default
+
+service usbconfig /sbin/usbconfig
+   oneshot
+
+service recovery /sbin/recovery
+
+service adbd /sbin/adbd recovery
+
+on property:persist.service.adb.enable=1
+    start adbd
+
+on property:persist.service.adb.enable=0
+    stop adbd
