@@ -23,8 +23,8 @@
 ** Please do not change the EXIF header without asking me first.
 */
 
-//#define LOG_NDEBUG 0
-#define LOG_NIDEBUG 0
+#define LOG_NDEBUG 1
+#define LOG_NIDEBUG 1
 #define LOG_TAG "QualcommCameraHardware"
 #include <utils/Log.h>
 
@@ -614,8 +614,9 @@ struct SensorType {
 
 static SensorType sensorTypes[] = {
         { "5mp", 2608, 1960, true,  2592, 1944,0x00000fff },
-        { "5mp", 5184, 1944, false,  2592, 1944,0x00000fff },
+        { "5mp", 2592, 1944, false, 2592, 1944,0x00000fff },
         { "3mp", 2064, 1544, false, 2048, 1536,0x000007ff },
+        { "3mp", 2048, 1536, false, 2048, 1536,0x000007ff },
         { "2mp", 3200, 1200, false, 1600, 1200,0x000007ff } };
 
 
@@ -1165,6 +1166,7 @@ void QualcommCameraHardware::findSensorType(){
     if (ret) {
         unsigned int i;
         for (i = 0; i < sizeof(sensorTypes) / sizeof(SensorType); i++) {
+        		LOGE("L: %i rawPictureHeight= %i raw_picture_height= %i raw_picture_width= %i", i, sensorTypes[i].rawPictureHeight, mDimension.raw_picture_height, mDimension.raw_picture_width);
             if (sensorTypes[i].rawPictureHeight
                     == mDimension.raw_picture_height) {
                 sensorType = sensorTypes + i;
