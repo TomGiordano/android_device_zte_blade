@@ -75,7 +75,7 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxMpeg4Dec.so -d ../../
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxVidEnc.so -d ../../../vendor/zte/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxAmrRtpDec.so -d ../../../vendor/zte/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxAacEnc.so -d ../../../vendor/zte/$DEVICE/proprietary
-unzip -j -o ../../../${DEVICE}_update.zip system/lib/hw/gralloc.msm7k.so -d ../../../vendor/zte/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libmm-adspsvc.so -d ../../../vendor/zte/$DEVICE/proprietary
 
 #EGL
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/egl/libEGL_adreno200.so -d ../../../vendor/zte/$DEVICE/proprietary
@@ -115,7 +115,7 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/libmmipl.so -d ../../../ven
 PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/qmuxd:system/bin/qmuxd \\
     vendor/zte/__DEVICE__/proprietary/akmd2:system/bin/akmd2 \\
-    vendor/zte/__DEVICE__/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init
+    vendor/zte/__DEVICE__/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init \\
     vendor/zte/__DEVICE__/proprietary/ar6000.ko:system/wifi/ar6000.ko \\
     vendor/zte/__DEVICE__/proprietary/reg_code:system/wifi/regcode \\
     vendor/zte/__DEVICE__/proprietary/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \\
@@ -158,7 +158,7 @@ PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/libOmxVidEnc.so:/system/lib/libOmxVidEnc.so \\
     vendor/zte/__DEVICE__/proprietary/libOmxAmrRtpDec.so:/system/lib/libOmxAmrRtpDec.so \\
     vendor/zte/__DEVICE__/proprietary/libOmxAacEnc.so:/system/lib/libOmxAacEnc.so \\
-    vendor/zte/__DEVICE__/proprietary/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \\
+    vendor/zte/__DEVICE__/proprietary/libmm-adspsvc.so:/system/lib/libmm-adspsvc.so \\
     vendor/zte/__DEVICE__/proprietary/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \\
     vendor/zte/__DEVICE__/proprietary/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \\
     vendor/zte/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \\
