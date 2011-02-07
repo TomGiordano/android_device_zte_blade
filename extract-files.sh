@@ -65,15 +65,33 @@ adb pull /system/lib/libpbmlib.so ../../../vendor/zte/$DEVICE/proprietary/libpbm
 adb pull /system/lib/libdss.so ../../../vendor/zte/$DEVICE/proprietary/libdss.so
 adb pull /system/lib/libauth.so ../../../vendor/zte/$DEVICE/proprietary/libauth.so
 
-#sensors
+#sensors + lights
 adb pull /system/lib/hw/sensors.default.so ../../../vendor/zte/$DEVICE/proprietary/sensors.default.so
+adb pull /system/lib/hw/lights.msm7k.so ../../../vendor/zte/$DEVICE/proprietary/lights.msm7k.so
 
 #camera
 adb pull /system/lib/liboemcamera.so ../../../vendor/zte/$DEVICE/proprietary/liboemcamera.so
 adb pull /system/lib/libmmjpeg.so ../../../vendor/zte/$DEVICE/proprietary/libmmjpeg.so
 adb pull /system/lib/libmmipl.so ../../../vendor/zte/$DEVICE/proprietary/libmmipl.so
 
-
+#OMX
+adb pull /system/lib/libOmxEvrcEnc.so ../../../vendor/zte/$DEVICE/proprietary/libOmxEvrcEnc.so
+adb pull /system/lib/libOmxAacDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAacDec.so
+adb pull /system/lib/libOmxWmvDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxWmvDec.so
+adb pull /system/lib/libOmxQcelpDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxQcelpDec.so
+adb pull /system/lib/libOmxAmrEnc.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAmrEnc.so
+adb pull /system/lib/libOmxAdpcmDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAdpcmDec.so
+adb pull /system/lib/libOmxEvrcDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxEvrcDec.so
+adb pull /system/lib/libOmxH264Dec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxH264Dec.so
+adb pull /system/lib/libOmxAmrDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAmrDec.so
+adb pull /system/lib/libOmxAmrwbDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAmrwbDec.so
+adb pull /system/lib/libOmxWmaDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxWmaDec.so
+adb pull /system/lib/libOmxQcelp13Enc.so ../../../vendor/zte/$DEVICE/proprietary/libOmxQcelp13Enc.so
+adb pull /system/lib/libOmxMp3Dec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxMp3Dec.so
+adb pull /system/lib/libOmxMpeg4Dec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxMpeg4Dec.so
+adb pull /system/lib/libOmxVidEnc.so ../../../vendor/zte/$DEVICE/proprietary/libOmxVidEnc.so
+adb pull /system/lib/libOmxAmrRtpDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAmrRtpDec.so
+adb pull /system/lib/libOmxAacEnc.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAacEnc.so
 
 
 
@@ -130,11 +148,30 @@ PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/libdss.so:system/lib/libdss.so \\
     vendor/zte/__DEVICE__/proprietary/libauth.so:system/lib/libauth.so \\
     vendor/zte/__DEVICE__/proprietary/sensors.default.so:system/lib/hw/sensors.default.so \\
+    vendor/zte/__DEVICE__/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so \\
     vendor/zte/__DEVICE__/proprietary/liboemcamera.so:system/lib/liboemcamera.so \\
     vendor/zte/__DEVICE__/proprietary/liboemcamera.so:obj/lib/liboemcamera.so \\
     vendor/zte/__DEVICE__/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \\
     vendor/zte/__DEVICE__/proprietary/libmmipl.so:system/lib/libmmipl.so \\
-    vendor/zte/__DEVICE__/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init
+    vendor/zte/__DEVICE__/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init \\
+    vendor/zte/__DEVICE__/proprietary/libOmxEvrcEnc.so:/system/lib/libOmxEvrcEnc.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAacDec.so:/system/lib/libOmxAacDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxWmvDec.so:/system/lib/libOmxWmvDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxQcelpDec.so:/system/lib/libOmxQcelpDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAmrEnc.so:/system/lib/libOmxAmrEnc.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAdpcmDec.so:/system/lib/libOmxAdpcmDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxEvrcDec.so:/system/lib/libOmxEvrcDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxH264Dec.so:/system/lib/libOmxH264Dec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAmrDec.so:/system/lib/libOmxAmrDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAmrwbDec.so:/system/lib/libOmxAmrwbDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxWmaDec.so:/system/lib/libOmxWmaDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxQcelp13Enc.so:/system/lib/libOmxQcelp13Enc.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxMp3Dec.so:/system/lib/libOmxMp3Dec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxMpeg4Dec.so:/system/lib/libOmxMpeg4Dec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxVidEnc.so:/system/lib/libOmxVidEnc.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAmrRtpDec.so:/system/lib/libOmxAmrRtpDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAacEnc.so:/system/lib/libOmxAacEnc.so
+
 
 EOF
 

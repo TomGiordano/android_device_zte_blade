@@ -62,13 +62,34 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/libpbmlib.so -d ../../../ve
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libdss.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libauth.so -d ../../../vendor/zte/$DEVICE/proprietary/
 
-#sensors
+#sensors + lights
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/hw/sensors.default.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/hw/lights.msm7k.so -d ../../../vendor/zte/$DEVICE/proprietary/
 
 #camera
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/liboemcamera.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libmmjpeg.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libmmipl.so -d ../../../vendor/zte/$DEVICE/proprietary/
+
+#OMX
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxEvrcEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAacDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxWmvDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxQcelpDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAmrEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAdpcmDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxEvrcDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxH264Dec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAmrDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAmrwbDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxWmaDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxQcelp13Enc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxMp3Dec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxMpeg4Dec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxVidEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAmrRtpDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAacEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+
 
 
 
@@ -125,11 +146,30 @@ PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/libdss.so:system/lib/libdss.so \\
     vendor/zte/__DEVICE__/proprietary/libauth.so:system/lib/libauth.so \\
     vendor/zte/__DEVICE__/proprietary/sensors.default.so:system/lib/hw/sensors.default.so \\
+    vendor/zte/__DEVICE__/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so \\
     vendor/zte/__DEVICE__/proprietary/liboemcamera.so:system/lib/liboemcamera.so \\
     vendor/zte/__DEVICE__/proprietary/liboemcamera.so:obj/lib/liboemcamera.so \\
     vendor/zte/__DEVICE__/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \\
     vendor/zte/__DEVICE__/proprietary/libmmipl.so:system/lib/libmmipl.so \\
-    vendor/zte/__DEVICE__/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init
+    vendor/zte/__DEVICE__/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init\\
+    vendor/zte/__DEVICE__/proprietary/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAacDec.so:system/lib/libOmxAacDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxQcelpDec.so:system/lib/libOmxQcelpDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxEvrcDec.so:system/lib/libOmxEvrcDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \\
+    vendor/zte/__DEVICE__/proprietary/libOmxAacEnc.so:system/lib/libOmxAacEnc.so 
+
 
 EOF
 
