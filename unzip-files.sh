@@ -21,8 +21,6 @@ unzip -j -o ../../../${DEVICE}_update.zip system/bin/qmuxd -d ../../../vendor/zt
 chmod 755 ../../../vendor/zte/$DEVICE/proprietary/qmuxd
 unzip -j -o ../../../${DEVICE}_update.zip system/bin/akmd2 -d ../../../vendor/zte/$DEVICE/proprietary/
 chmod 755 ../../../vendor/zte/$DEVICE/proprietary/akmd2
-unzip -j -o ../../../${DEVICE}_update.zip system/bin/CKPD-daemon -d ../../../vendor/zte/$DEVICE/proprietary/
-chmod 755 ../../../vendor/zte/$DEVICE/proprietary/CPKD-daemon
 unzip -j -o ../../../${DEVICE}_update.zip system/bin/hci_qcomm_init -d ../../../vendor/zte/$DEVICE/proprietary/
 chmod 755 ../../../vendor/zte/$DEVICE/proprietary/hci_qcomm_init
 
@@ -40,9 +38,11 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/egl/libEGL_adreno200.so -d 
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/egl/libGLESv2_adreno200.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/egl/libGLESv1_CM_adreno200.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/egl/libq3dtools_adreno200.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libgsl.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/etc/firmware/yamato_pfp.fw -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/etc/firmware/yamato_pm4.fw -d ../../../vendor/zte/$DEVICE/proprietary/
 
 #RIL files
-unzip -j -o ../../../${DEVICE}_update.zip system/lib/libgsl.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libril-qc-1.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libril-qcril-hook-oem.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libdiag.so -d ../../../vendor/zte/$DEVICE/proprietary/
@@ -62,9 +62,10 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/libpbmlib.so -d ../../../ve
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libdss.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libauth.so -d ../../../vendor/zte/$DEVICE/proprietary/
 
+#sensors
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/hw/sensors.default.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip system/lib/libcamera.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip system/lib/libcamera_client.so -d ../../../vendor/zte/$DEVICE/proprietary/
+
+#camera
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/liboemcamera.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libmmjpeg.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libmmipl.so -d ../../../vendor/zte/$DEVICE/proprietary/
@@ -100,9 +101,10 @@ PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \\
     vendor/zte/__DEVICE__/proprietary/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \\
     vendor/zte/__DEVICE__/proprietary/libgsl.so:system/lib//libgsl.so \\
+    vendor/zte/__DEVICE__/proprietary/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \\
+    vendor/zte/__DEVICE__/proprietary/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \\
     vendor/zte/__DEVICE__/proprietary/qmuxd:system/bin/qmuxd \\
     vendor/zte/__DEVICE__/proprietary/akmd2:system/bin/akmd2 \\
-    vendor/zte/__DEVICE__/proprietary/CKPD-daemon:system/bin/CKPD-daemon \\
     vendor/zte/__DEVICE__/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \\
     vendor/zte/__DEVICE__/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \\
     vendor/zte/__DEVICE__/proprietary/libdiag.so:system/lib/libdiag.so \\
@@ -123,11 +125,8 @@ PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/libdss.so:system/lib/libdss.so \\
     vendor/zte/__DEVICE__/proprietary/libauth.so:system/lib/libauth.so \\
     vendor/zte/__DEVICE__/proprietary/sensors.default.so:system/lib/hw/sensors.default.so \\
-    vendor/zte/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
-    vendor/zte/__DEVICE__/proprietary/libcamera.so:system/lib/libcamera.so \\
-    vendor/zte/__DEVICE__/proprietary/libcamera_client.so:obj/lib/libcamera_client.so \\
-    vendor/zte/__DEVICE__/proprietary/libcamera_client.so:system/lib/libcamera_client.so \\
     vendor/zte/__DEVICE__/proprietary/liboemcamera.so:system/lib/liboemcamera.so \\
+    vendor/zte/__DEVICE__/proprietary/liboemcamera.so:obj/lib/liboemcamera.so \\
     vendor/zte/__DEVICE__/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \\
     vendor/zte/__DEVICE__/proprietary/libmmipl.so:system/lib/libmmipl.so \\
     vendor/zte/__DEVICE__/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init
