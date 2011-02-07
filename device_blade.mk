@@ -66,7 +66,8 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_COPY_FILES += \
-    device/zte/blade/init.blade.rc:root/init.blade.rc
+    device/zte/blade/init.blade.rc:root/init.blade.rc \
+    device/zte/blade/ueventd.blade.rc:root/ueventd.blade.rc
 
 # WLAN + BT
 PRODUCT_COPY_FILES += \
