@@ -36,12 +36,18 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     VisualizationWallpapers \
+    libRS \
     librs_jni \
     Gallery3d \
     SpareParts \
     Development \
     Term \
     GraphicsLab \
+    gralloc.blade \
+    copybit.blade \
+    gps.blade \
+    libOmxCore \
+    libOmxVidEnc \
     dexpreopt
 
 # proprietary side of the device
