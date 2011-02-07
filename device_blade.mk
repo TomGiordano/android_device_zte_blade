@@ -59,6 +59,9 @@ DISABLE_DEXPREOPT := false
 PRODUCT_COPY_FILES += \
     device/zte/blade/usbconfig:root/sbin/usbconfig
 
+PRODUCT_COPY_FILES += \
+    device/zte/blade/qwerty.kl:system/usr/keylayout/qwerty.kl
+
 # prebuilt vold
 PRODUCT_COPY_FILES += \
     device/zte/blade/vold:system/bin/vold \
@@ -126,5 +129,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.dexopt-flags=m=y \
     dalvik.vm.heapsize=32m \
+    dalvik.vm.execution-mode=int:jit \
+    dalvik.vm.dexopt-data-only=1 \
     ro.opengles.version=131072  
 
