@@ -13,4 +13,4 @@
 # limitations under the License.
 
 
-include $(call all-named-subdir-makefiles, recovery libaudio libril libcopybit libcamera libgralloc)
+include $(call all-named-subdir-makefiles, recovery libaudio libril libcamera libgralloc)
