@@ -116,7 +116,7 @@ adb pull /system/lib/libmm-adspsvc.so ../../../vendor/zte/$DEVICE/proprietary/li
 # All the blobs necessary for blade
 PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/ar6000.ko:system/wifi/ar6000.ko \\
-    vendor/zte/__DEVICE__/proprietary/reg_code:system/wifi/regcode \\
+    vendor/zte/__DEVICE__/proprietary/regcode:system/wifi/regcode \\
     vendor/zte/__DEVICE__/proprietary/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \\
     vendor/zte/__DEVICE__/proprietary/athwlan.bin.z77:system/wifi/athwlan.bin.z77 \\
     vendor/zte/__DEVICE__/proprietary/athtcmd_ram.bin:system/wifi/athtcmd_ram.bin \\
