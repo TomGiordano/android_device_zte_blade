@@ -92,6 +92,7 @@ adb pull /system/lib/libOmxMpeg4Dec.so ../../../vendor/zte/$DEVICE/proprietary/l
 adb pull /system/lib/libOmxVidEnc.so ../../../vendor/zte/$DEVICE/proprietary/libOmxVidEnc.so
 adb pull /system/lib/libOmxAmrRtpDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAmrRtpDec.so
 adb pull /system/lib/libOmxAacEnc.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAacEnc.so
+adb pull /system/lib/libmm-adspsvc.so ../../../vendor/zte/$DEVICE/proprietary/libmm-adspsvc.so
 
 
 
@@ -170,7 +171,8 @@ PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/libOmxMpeg4Dec.so:/system/lib/libOmxMpeg4Dec.so \\
     vendor/zte/__DEVICE__/proprietary/libOmxVidEnc.so:/system/lib/libOmxVidEnc.so \\
     vendor/zte/__DEVICE__/proprietary/libOmxAmrRtpDec.so:/system/lib/libOmxAmrRtpDec.so \\
-    vendor/zte/__DEVICE__/proprietary/libOmxAacEnc.so:/system/lib/libOmxAacEnc.so
+    vendor/zte/__DEVICE__/proprietary/libOmxAacEnc.so:/system/lib/libOmxAacEnc.so \\
+    vendor/zte/__DEVICE__/proprietary/libmm-adspsvc.so:/system/lib/libmm-adspsvc.so
 
 
 EOF

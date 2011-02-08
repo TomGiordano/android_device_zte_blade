@@ -89,6 +89,7 @@ unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxMpeg4Dec.so -d ../..
 unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxVidEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAmrRtpDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
 unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAacEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libmm-adspsvc.so -d ../../../vendor/zte/$DEVICE/proprietary/
 
 
 
@@ -168,7 +169,8 @@ PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \\
     vendor/zte/__DEVICE__/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \\
     vendor/zte/__DEVICE__/proprietary/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \\
-    vendor/zte/__DEVICE__/proprietary/libOmxAacEnc.so:system/lib/libOmxAacEnc.so 
+    vendor/zte/__DEVICE__/proprietary/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \\
+    vendor/zte/__DEVICE__/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so
 
 
 EOF
