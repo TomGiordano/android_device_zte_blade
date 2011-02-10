@@ -72,6 +72,11 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/init.blade.rc:root/init.blade.rc \
     device/zte/blade/ueventd.blade.rc:root/ueventd.blade.rc
 
+# Audio
+PRODUCT_COPY_FILES += \
+    device/zte/blade/AudioFilter.csv:system/etc/AudioFilter.csv \
+    device/zte/blade/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
+
 # WLAN + BT
 PRODUCT_COPY_FILES += \
     device/zte/blade/init.bt.sh:system/etc/init.bt.sh \
