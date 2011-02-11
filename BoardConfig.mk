@@ -32,6 +32,8 @@ BOARD_NO_RGBX_8888 := true
 TARGET_NO_BOOTLOADER := true
 
 TARGET_PREBUILT_RECOVERY_KERNEL := device/zte/blade/recovery_kernel
+TARGET_RECOVERY_INITRC := device/zte/blade/recovery/init.rc
+
 BOARD_KERNEL_CMDLINE := androidboot.hardware=blade console=ttyMSM2,115200
 
 TARGET_BOARD_PLATFORM := msm7k

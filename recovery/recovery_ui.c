@@ -59,12 +59,12 @@ int device_handle_key(int key_code, int visible) {
             case KEY_CAPSLOCK:
             case KEY_DOWN:
             case KEY_VOLUMEUP:
-                return HIGHLIGHT_DOWN;
+                return HIGHLIGHT_UP;
 
             case KEY_LEFTSHIFT:
             case KEY_UP:
             case KEY_VOLUMEDOWN:
-                return HIGHLIGHT_UP;
+                return HIGHLIGHT_DOWN;
 
             case 62:
 		return SELECT_ITEM;
