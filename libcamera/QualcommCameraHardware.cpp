@@ -163,8 +163,8 @@ union zoomimage
 } zoomImage;
 
 //Default to VGA
-#define DEFAULT_PREVIEW_WIDTH 640
-#define DEFAULT_PREVIEW_HEIGHT 480
+#define DEFAULT_PREVIEW_WIDTH 480
+#define DEFAULT_PREVIEW_HEIGHT 320
 
 /*
  * Modifying preview size requires modification
@@ -616,7 +616,7 @@ static SensorType sensorTypes[] = {
         { "5mp", 2608, 1960, true,  2592, 1944,0x00000fff },
         { "5mp", 5184, 1944, false,  2592, 1944,0x00000fff },
         { "3mp", 2064, 1544, false, 2048, 1536,0x000007ff },
-        { "3mp", 2048, 1536, false, 2048, 1536,0x000007ff },
+        { "3mp", 4096, 1536, false, 2048, 1536,0x000007ff },
         { "2mp", 3200, 1200, false, 1600, 1200,0x000007ff } };
 
 
@@ -1174,6 +1174,7 @@ void QualcommCameraHardware::findSensorType(){
         }
     }
     //default to 5 mp
+    LOGD("Failed to find a match for %d x %d, using 5M default",mDimension.raw_picture_width,mDimension.raw_picture_height);
     sensorType = sensorTypes;
     return;
 }
@@ -1364,9 +1365,6 @@ status_t QualcommCameraHardware::dump(int fd,
     }
     if (mJpegHeap != 0) {
         mJpegHeap->dump(fd, args);
-    }
-    if(mRawSnapshotAshmemHeap != 0 ){
-        mRawSnapshotAshmemHeap->dump(fd, args);
     }
     mParameters.dump(fd, args);
     return NO_ERROR;
@@ -2458,7 +2456,6 @@ void QualcommCameraHardware::deinitRawSnapshot()
 {
     LOGV("deinitRawSnapshot E");
     mRawSnapShotPmemHeap.clear();
-    mRawSnapshotAshmemHeap.clear();
     LOGV("deinitRawSnapshot X");
 }
 
@@ -3057,7 +3054,7 @@ status_t QualcommCameraHardware::setParameters(const CameraParameters& params)
     if ((rc = setPictureSize(params)))  final_rc = rc;
     if ((rc = setJpegQuality(params)))  final_rc = rc;
     if ((rc = setAntibanding(params)))  final_rc = rc;
-    if ((rc = setAutoExposure(params))) final_rc = rc;
+    //if ((rc = setAutoExposure(params))) final_rc = rc;
     if ((rc = setWhiteBalance(params))) final_rc = rc;
     if ((rc = setEffect(params)))       final_rc = rc;
     if ((rc = setFlash(params)))        final_rc = rc;
@@ -3637,29 +3634,8 @@ void QualcommCameraHardware::receiveRawSnapshot(){
          */
         notifyShutter(&mCrop);
 
-        //Create a Ashmem heap to copy data from PMem heap for application layer
-        if(mRawSnapshotAshmemHeap != NULL){
-            LOGV("receiveRawSnapshot: clearing old mRawSnapShotAshmemHeap.");
-            mRawSnapshotAshmemHeap.clear();
-        }
-        mRawSnapshotAshmemHeap = new AshmemPool(
-                                        mRawSnapShotPmemHeap->mBufferSize,
-                                        mRawSnapShotPmemHeap->mNumBuffers,
-                                        mRawSnapShotPmemHeap->mFrameSize,
-                                        "raw ashmem snapshot camera"
-                                        );
-
-        if(!mRawSnapshotAshmemHeap->initialized()){
-            LOGE("receiveRawSnapshot X: error initializing mRawSnapshotHeap");
-            deinitRawSnapshot();
-            return;
-        }
-
-        memcpy(mRawSnapshotAshmemHeap->mHeap->base(),
-                mRawSnapShotPmemHeap->mHeap->base(),
-                mRawSnapShotPmemHeap->mHeap->getSize());
        if (mDataCallback && (mMsgEnabled & CAMERA_MSG_COMPRESSED_IMAGE))
-           mDataCallback(CAMERA_MSG_COMPRESSED_IMAGE, mRawSnapshotAshmemHeap->mBuffers[0],
+           mDataCallback(CAMERA_MSG_COMPRESSED_IMAGE, mRawSnapShotPmemHeap->mBuffers[0],
                 mCallbackCookie);
 
     }
@@ -4552,8 +4528,8 @@ static bool register_buf(int camfd,
 
     pmemBuf.active   = vfe_can_write;
 
-    LOGV("register_buf: camfd = %d, reg = %d buffer = %p",
-         camfd, !register_buffer, buf);
+    LOGV("register_buf: camfd = %d, reg = %d buffer = %p can_write = %d",
+         camfd, !register_buffer, buf, pmemBuf.active);
     if (ioctl(camfd,
               register_buffer ?
               MSM_CAM_IOCTL_REGISTER_PMEM :
