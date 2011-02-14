@@ -93,6 +93,13 @@ adb pull /system/lib/libOmxVidEnc.so ../../../vendor/zte/$DEVICE/proprietary/lib
 adb pull /system/lib/libOmxAmrRtpDec.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAmrRtpDec.so
 adb pull /system/lib/libOmxAacEnc.so ../../../vendor/zte/$DEVICE/proprietary/libOmxAacEnc.so
 adb pull /system/lib/libmm-adspsvc.so ../../../vendor/zte/$DEVICE/proprietary/libmm-adspsvc.so
+adb pull /system/lib/libomx_aacdec_sharedlibrary.so ../../../vendor/zte/$DEVICE/proprietary/libomx_aacdec_sharedlibrary.so
+adb pull /system/lib/libomx_amrdec_sharedlibrary.so ../../../vendor/zte/$DEVICE/proprietary/libomx_amrdec_sharedlibrary.so
+adb pull /system/lib/libomx_amrenc_sharedlibrary.so ../../../vendor/zte/$DEVICE/proprietary/libomx_amrenc_sharedlibrary.so
+adb pull /system/lib/libomx_avcdec_sharedlibrary.so ../../../vendor/zte/$DEVICE/proprietary/libomx_avcdec_sharedlibrary.so
+adb pull /system/lib/libomx_m4vdec_sharedlibrary.so ../../../vendor/zte/$DEVICE/proprietary/libomx_m4vdec_sharedlibrary.so
+adb pull /system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/zte/$DEVICE/proprietary/libomx_mp3dec_sharedlibrary.so
+adb pull /system/lib/libomx_sharedlibrary.so ../../../vendor/zte/$DEVICE/proprietary/libomx_sharedlibrary.so
 
 
 
@@ -172,7 +179,15 @@ PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/libOmxVidEnc.so:/system/lib/libOmxVidEnc.so \\
     vendor/zte/__DEVICE__/proprietary/libOmxAmrRtpDec.so:/system/lib/libOmxAmrRtpDec.so \\
     vendor/zte/__DEVICE__/proprietary/libOmxAacEnc.so:/system/lib/libOmxAacEnc.so \\
-    vendor/zte/__DEVICE__/proprietary/libmm-adspsvc.so:/system/lib/libmm-adspsvc.so
+    vendor/zte/__DEVICE__/proprietary/libmm-adspsvc.so:/system/lib/libmm-adspsvc.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_amrenc_sharedlibrary.so:system/lib/libomx_amrenc_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so
+
 
 
 EOF

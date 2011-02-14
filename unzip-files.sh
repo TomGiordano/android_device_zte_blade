@@ -72,24 +72,31 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/libmmjpeg.so -d ../../../ve
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libmmipl.so -d ../../../vendor/zte/$DEVICE/proprietary/
 
 #OMX
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxEvrcEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAacDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxWmvDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxQcelpDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAmrEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAdpcmDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxEvrcDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxH264Dec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAmrDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAmrwbDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxWmaDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxQcelp13Enc.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxMp3Dec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxMpeg4Dec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxVidEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAmrRtpDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libOmxAacEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
-unzip -j -o ../../../${DEVICE}_update.zip /system/lib/libmm-adspsvc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxEvrcEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxAacDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxWmvDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxQcelpDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxAmrEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxAdpcmDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxEvrcDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxH264Dec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxAmrDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxAmrwbDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxWmaDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxQcelp13Enc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxMp3Dec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxMpeg4Dec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxVidEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxAmrRtpDec.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libOmxAacEnc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libmm-adspsvc.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libomx_aacdec_sharedlibrary.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libomx_amrdec_sharedlibrary.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libomx_amrenc_sharedlibrary.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libomx_avcdec_sharedlibrary.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libomx_m4vdec_sharedlibrary.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libomx_mp3dec_sharedlibrary.so -d ../../../vendor/zte/$DEVICE/proprietary/
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libomx_sharedlibrary.so -d ../../../vendor/zte/$DEVICE/proprietary/
 
 
 
@@ -170,7 +177,14 @@ PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \\
     vendor/zte/__DEVICE__/proprietary/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \\
     vendor/zte/__DEVICE__/proprietary/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \\
-    vendor/zte/__DEVICE__/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so
+    vendor/zte/__DEVICE__/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_amrenc_sharedlibrary.so:system/lib/libomx_amrenc_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \\
+    vendor/zte/__DEVICE__/proprietary/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so
 
 
 EOF
