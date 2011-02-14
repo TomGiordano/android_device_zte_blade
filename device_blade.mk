@@ -36,13 +36,14 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     VisualizationWallpapers \
-    libRS \
+    MagicSmokeWallpapers \
+    VisualizationWallpapers \
     librs_jni \
     Gallery3d \
     SpareParts \
     Development \
     Term \
-    GraphicsLab \
+    FM \
     gralloc.blade \
     copybit.blade \
     gps.blade \
@@ -83,7 +84,6 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/zte/blade/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
 
-
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -118,6 +118,10 @@ PRODUCT_LOCALES += hdpi
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
+
+# This should not be needed but on-screen keyboard uses the wrong density without it.
+PRODUCT_PROPERTY_OVERRIDES += \
+    qemu.sf.lcd_density=240 
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
