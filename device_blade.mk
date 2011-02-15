@@ -56,6 +56,10 @@ $(call inherit-product-if-exists, vendor/zte/blade/blade-vendor.mk)
 
 DISABLE_DEXPREOPT := false
 
+#GSM APN LIST
+PRODUCT_COPY_FILES += \
+vendor/cyanogen/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+
 # usbconfig
 PRODUCT_COPY_FILES += \
     device/zte/blade/usbconfig:root/sbin/usbconfig
