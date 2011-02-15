@@ -56,10 +56,6 @@ $(call inherit-product-if-exists, vendor/zte/blade/blade-vendor.mk)
 
 DISABLE_DEXPREOPT := false
 
-# usbconfig
-PRODUCT_COPY_FILES += \
-    device/zte/blade/usbconfig:root/sbin/usbconfig
-
 PRODUCT_COPY_FILES += \
     device/zte/blade/qwerty.kl:system/usr/keylayout/qwerty.kl
 
