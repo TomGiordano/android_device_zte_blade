@@ -52,6 +52,7 @@
          than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
+	<item>15</item>
         <item>30</item>
         <item>70</item>
         <item>90</item>
@@ -141,6 +142,7 @@
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
+	<item>"athap0"</item>
     </string-array>
 
 

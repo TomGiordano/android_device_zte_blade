@@ -87,12 +87,14 @@ on boot
     chown system system /sys/class/leds/green/blink
 
 # SD card polling
-    chown system system /sys/bus/platform/devices/msm_sdcc.1/polling
-    chown system system /sys/bus/platform/devices/msm_sdcc.2/polling
+    chown system system /sys/devices/platform/msm_sdcc.1/polling
+    chown system system /sys/devices/platform/msm_sdcc.2/polling
+    chown system system /sys/devices/platform/msm_sdcc.3/polling
+    chown system system /sys/devices/platform/msm_sdcc.4/polling
 
 # Enable MASS storage on SDCARD
-    write /sys/devices/platform/mass_storage/lun0/file /dev/block/mmcblk0p1
-    write /sys/bus/platform/drivers/msm_sdcc/msm_sdcc.1/polling 1
+#    write /sys/devices/platform/mass_storage/lun0/file /dev/block/mmcblk0p1
+#    write /sys/bus/platform/drivers/msm_sdcc/msm_sdcc.1/polling 1
 
 
 service usbconfig /sbin/usbconfig
@@ -148,7 +150,8 @@ on property:persist.sys.charging.disable=0
     write /sys/module/msm_battery/parameters/usb_chg_enable 1
 
 service hostapd /system/bin/hostapd /data/misc/wifi/hostapd.conf
-    socket hostapd_athap0 dgram 660 wifi wifi
+    socket hostapd_wlap0 dgram 660 root wifi
+    user root
     group wifi inet
     oneshot
     disabled
